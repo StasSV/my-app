@@ -1,5 +1,5 @@
 package com.mycompany.app;
 
-public interface Autodrom {
+public interface Auto {
     public void beep();
 }

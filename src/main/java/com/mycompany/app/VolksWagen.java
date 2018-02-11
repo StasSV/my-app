@@ -4,7 +4,9 @@ package com.mycompany.app;
 
 import java.util.List;
 
-public class VolksWagen implements Autodrom {
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class VolksWagen implements Auto {
     private Beep beep;
     private List<Driver> drivers;
 
@@ -15,6 +17,7 @@ public class VolksWagen implements Autodrom {
         beep.BeeepBeep();
     }
     
+    @Autowired 
     public void setBeep(Beep beep) {
         this.beep = beep;
     }
@@ -23,7 +26,7 @@ public class VolksWagen implements Autodrom {
      this.beep = beep;
     }
     
-
+    @Autowired(required = true)
     public void setDrivers(List<Driver> drivers) {
         this.drivers = drivers;
     }
