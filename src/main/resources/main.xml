@@ -1,0 +1,33 @@
+<context: annotation-config/>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--Впровадження через конструктор-->
+    <bean id="firstDriver" class="com.mycompany.app.FirstDriver">
+        <constructor-arg value="Sergio"/>
+    </bean>
+    <bean id="secondDriver" class="com.mycompany.app.SecondDriver">
+        <constructor-arg value="Vitaliy"/>
+    </bean>
+    
+
+    <bean id="vw" class="com.mycompany.app.VolksWagen">
+        <!--Впровадження через поля-->
+        <property name="beep" ref="beeplouder"/>
+       <!--Впровадження списків-->
+        <property name="drivers">
+            <list>
+                <ref bean="firstDriver"/>
+                <ref bean="secondDriver"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="beeplouder" class="com.mycompany.app.BeepLOuder"/>
+   
+</beans>
+
+
